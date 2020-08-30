@@ -32,7 +32,7 @@ public class ProductController {
 		return new ResponseEntity<List<Product>>(Products, HttpStatus.OK);
 	}
 	
-	@GetMapping(value = "/Product/{productId}")
+	@GetMapping(value = "/product/{productId}")
 	public ResponseEntity<Product> getProducts(@PathVariable("productId") Integer productId){
 		Optional<Product> product = productRepository.findById(productId);
 		return new ResponseEntity<Product>(product.get(), HttpStatus.OK);
